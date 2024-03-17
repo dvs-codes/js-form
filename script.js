@@ -83,12 +83,17 @@ function passwordConfirmer() {
     let message = document.querySelector('.confirm span')
     let sign = document.querySelector('.confirm img') 
 
-    if (confirmPassword.validity.valid && confirmPassword.value === password.value) {
+    if (confirmPassword.validity.valid && 
+        confirmPassword.value === password.value) {
         message.textContent = ""
         sign.setAttribute('src', './tick.svg')
+        confirmPassword.style.boxShadow = ' 0 0 5px 1px rgb(0, 255, 115)'
     } else  {
         message.textContent = "Password do not match"
         sign.setAttribute('src', './cross.svg')
+        confirmPassword.style.outline = 'none'
+        confirmPassword.style.boxShadow = '0 0 5px 1px red'
+
     }
         
 }
