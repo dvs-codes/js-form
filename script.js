@@ -8,6 +8,8 @@ const submitButton = document.querySelector('button')
 email.oninput = emailChangeDetector
 pincode.oninput = checkPin
 state.onchange = checkPin
+password.oninput = passwordChecker
+confirmPassword.oninput = passwordConfirmer
 
 function emailChangeDetector (event) {
 
@@ -61,7 +63,35 @@ function checkPin() {
     }
 }
 
+function passwordChecker() {
+    //for sign and message change
+    let message = document.querySelector('.password span')
+    let sign = document.querySelector('.password img') 
 
+    if (password.validity.valid) {
+        message.textContent = ""
+        sign.setAttribute('src', './tick.svg')
+    } else  {
+        message.textContent = "Please enter a valid password"
+        sign.setAttribute('src', './cross.svg')
+    }
+    
+}
+
+function passwordConfirmer() {
+    //for sign and message change
+    let message = document.querySelector('.confirm span')
+    let sign = document.querySelector('.confirm img') 
+
+    if (confirmPassword.validity.valid && confirmPassword.value === password.value) {
+        message.textContent = ""
+        sign.setAttribute('src', './tick.svg')
+    } else  {
+        message.textContent = "Password do not match"
+        sign.setAttribute('src', './cross.svg')
+    }
+        
+}
 
 
 
