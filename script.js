@@ -10,6 +10,9 @@ pincode.oninput = checkPin
 state.onchange = checkPin
 password.oninput = passwordChecker
 confirmPassword.oninput = passwordConfirmer
+submitButton.onclick = giveHighFIve
+
+let pindone = false
 
 function emailChangeDetector (event) {
 
@@ -57,9 +60,11 @@ function checkPin() {
         pincode.setCustomValidity("")
         message.textContent = ""
         sign.setAttribute('src', './tick.svg')
+        pindone = true
     } else {
         pincode.setCustomValidity(pincodeSystem[state.value][1])
         message.textContent = pincodeSystem[state.value][1]
+        pindone = false
     }
 }
 
@@ -98,6 +103,16 @@ function passwordConfirmer() {
         
 }
 
+function giveHighFIve(event) {
+
+    if(email.validity.valid && 
+       pindone && 
+       password.validity.valid &&
+       confirmPassword.validity.valid && 
+       confirmPassword.value === password.value) {
+    alert("High five sailor")
+    }
+}
 
 
 
