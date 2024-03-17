@@ -1,0 +1,25 @@
+p {
+    display: flex;
+    align-items: center;
+}
+
+input:invalid {
+    border: 1px solid black;
+    border-radius: 6px;
+    height: 18px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+}
+
+input:focus:invalid { 
+    outline: none;
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:valid { 
+    border-radius: 6px;
+    height: 18px;
+    box-shadow: 0 0 5px 1px rgb(0, 255, 115);
+    outline: none;
+}

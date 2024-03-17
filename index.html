@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS form validation</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <form action="">
+        <p class="email">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <span></span>
+            <img src="" alt="">
+        </p>
+        <p class="state">
+            <label for="state">State:</label>
+            <select name="" id="state">
+                <option value="gujarat">Gujarat</option>
+                <option value="maharastra">Maharastra</option>
+                <option value="tamilnadu">Tamilnadu</option>
+                <option value="kerala">Kerala</option>
+            </select>
+        </p>
+        <p class="pincode">
+            <label for="pincode">Pincode:</label>
+            <input type="text" name="" id="pincode" required minlength="6" maxlength="6">
+            <span></span>
+            <img src="" alt="">
+        </p>
+        <p class="password">
+            <label for="password">Password:</label>
+            <input type="text" name="" id="password" required>
+            <img src="" alt="">
+        </p>
+        <p class="confirm">
+            <label for="password-confirm">Confirm Password:</label>
+            <input type="text" name="" id="password-confirm" required>
+            <img src="" alt="">
+        </p>
+        <p>
+            <button type="submit" >Submit</button>
+        </p>
+    </form>
+</body>
+</html>
